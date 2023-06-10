@@ -2,7 +2,7 @@
 session_start();
 $varUsuario= $_POST['txtUsuario'];
 $varContrasena=$_POST['txtContrasena'];
-$conex = mysqli_connect("", "", "", "") or die("No se pudo realizar la conexion");
+$conex = mysqli_connect("localhost", "root", "", "bluesky_db")or die("No se pudo realizar la conexion");
 $consulta="SELECT * FROM login WHERE Usuario='$varUsuario' AND Contraseña='$varContrasena'";
 $resultado= mysqli_query($conex, $consulta);
 if($fila=mysqli_fetch_array($resultado)){
